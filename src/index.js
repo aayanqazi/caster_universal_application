@@ -1,15 +1,21 @@
 'use strict';
 
-import App from './common/components/App';
+import App from './common/App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
-
-
+import { Provider } from 'react-redux';
+import Store from './Store';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 var content = document.getElementById('content');
 
 ReactDOM.render((
-  <Router history={hashHistory}>
-    <Route path="/" component={App} />
-  </Router>
+  <Provider store={Store}>
+    <MuiThemeProvider>
+  <App />
+  </MuiThemeProvider>
+  </Provider>
 ), content);
+
+
