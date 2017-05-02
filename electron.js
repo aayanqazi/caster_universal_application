@@ -1,6 +1,7 @@
 'use strict';
 
 const electron = require('electron');
+
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -11,12 +12,13 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 function createWindow () {
+  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
   // Create the browser window.
   mainWindow = new BrowserWindow({
     minWidth: 300,
     minHeight: 475,
-    maxWidth: 800,
-    maxHeight: 600
+    maxWidth: width,
+    maxHeight: height,
   });
 
   // and load the index.html of the app.

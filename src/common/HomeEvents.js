@@ -7,12 +7,19 @@ export default class HomeEvents extends React.Component{
 
     this.state = {
       open: false,
+      openNext:false
     };
   }
 
    handleRequestClose = () => {
     this.setState({
       open: false,
+    });
+  };
+
+  leftRequestClose = () => {
+    this.setState({
+      openNext: false,
     });
   };
 

@@ -7,23 +7,24 @@ import Menu from 'material-ui/Menu';
 
 
 export default function Modals() {
+    console.log("props" , this.props)
     return (
          <Popover
-          open={this.state.open}
+          open={this.state.openNext}
           anchorEl={this.state.anchorEl}
           anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
           targetOrigin={{horizontal: 'left', vertical: 'top'}}
-          onRequestClose={this.handleRequestClose}
+          onRequestClose={this.leftRequestClose}
         >
-          <Menu onItemTouchTap={(menuItem,event,index)=> this.props.getNews(event.ref)}>
-            <MenuItem ref="business-insider" primaryText="Buisness Insider" />
-            <MenuItem ref="time" primaryText="Time" />
-            <MenuItem ref="bbc-sport" primaryText="BBC Sports" />
-            <MenuItem ref="bbc-news" primaryText="BBC News" />
-            <MenuItem ref="cnn" primaryText="CNN" />
-            <MenuItem ref="espn" primaryText="ESPN" />
-            <MenuItem ref="google-news" primaryText="Google News" />
-            <MenuItem ref="hacker-news" primaryText="Hacker News" />
+          <Menu onItemTouchTap={(menuItem,event,index)=> this.props.getNewsfromSource(event.ref)}>
+            <MenuItem ref="sport" primaryText="Sports" />
+            <MenuItem ref="buisness" primaryText="Buisness" />
+            <MenuItem ref="entertainment" primaryText="Entertainment" />
+            <MenuItem ref="gaming" primaryText="Gaming" />
+            <MenuItem ref="general" primaryText="General" />
+            <MenuItem ref="music" primaryText="Music" />
+            <MenuItem ref="politics" primaryText="Politics" />
+            <MenuItem ref="science-and-nature" primaryText="Science And Nature" />
 
           </Menu>
         </Popover>
