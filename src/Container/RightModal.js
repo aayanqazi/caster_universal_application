@@ -1,7 +1,7 @@
 
 import CounterAction from '../Store/Action/Actions';
 import {connect} from 'react-redux';
-import leftModals from "../common/leftModals"
+import leftModals from "../common/leftModal"
 
 function mapStateToProps(state) {
     return {
@@ -10,9 +10,9 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        getNews: (data) => dispatch(CounterAction.getNews(data))
+        getNews: (data) => dispatch(CounterAction.getNewsFromSource(data))
     };
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(Modals)
+export default connect(mapStateToProps,mapDispatchToProps)(leftModals)
